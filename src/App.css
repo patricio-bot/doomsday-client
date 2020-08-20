@@ -1,0 +1,303 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  font-family: 'Montserrat', sans-serif;
+  --red-btn: #8b0a0a;
+  --main-red: #fc4e4e;
+  --second-red: #ff8383;
+  --input-bg: rgba(126, 23, 23, 0.8);
+  --input-text: rgb(185, 185, 185);
+  --pink-text: #ffaeae;
+  --modal-bg: rgba(56, 2, 2, 0.64);
+  --danger-color: #dc3545;
+  --success-color: #28a745;
+}
+
+img {
+  width: 100%;
+}
+
+h1 {
+  font-size: 3.2rem;
+}
+
+h2 {
+  font-size: 2.4rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+h4 {
+  font-size: 1.6rem;
+}
+
+h5 {
+  font-size: 1.4rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  display: flex;
+  padding: 20px;
+  background: black;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+}
+
+nav.navbar .navbar-user {
+  margin-left: 10px;
+  color: white;
+}
+
+button.navbar-button {
+  padding: 5px 20px;
+  width: 100px;
+  border-radius: 3px;
+  margin: 0 10px;
+}
+
+#home-btn {
+  color: var(--main-red);
+  text-decoration: none;
+}
+
+.fa-fire {
+  font-size: 2.4rem;
+  color: var(--red-btn);
+}
+
+/**************** alert form **********************/
+.alert {
+  padding: 2rem;
+  margin: 1rem 0;
+  opacity: 0.9;
+
+}
+
+.alert-msg {
+  font-size: 1.6rem;
+  display: inline-block;
+}
+
+.alert-danger {
+  background: var(--danger-color);
+  color: #fff;
+}
+
+.alert-success {
+  background: var(--success-color);
+  color: #fff;
+}
+
+.fa-info-circle {
+  font-size: 1.4rem;
+}
+
+/**********************************************************/
+/******************** form *********************************/
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex-grow: 1;
+  background-color: black;
+}
+
+.form-container {
+  width: 90%;
+  margin: 4rem auto;
+  border: solid 1px var(--main-red);
+  padding: 2rem 2rem 4rem;
+}
+
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  align-self: flex-start;
+  font-size: 2rem;
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+  color: var(--main-red);
+}
+
+.form-input {
+  width: 100%;
+  padding: 1.8rem;
+  font-size: 2rem;
+  background-color: var(--input-bg);
+  border: none;
+  color: var(--pink-text);
+}
+
+.login-form {
+  padding: 4rem 0;
+}
+
+.form-input:focus {
+  outline: none;
+  border: 1px solid red;
+  box-shadow: 0px 10px 5px 0px rgba(110, 2, 2, 0.534);
+}
+
+.form-input::-webkit-input-placeholder {
+  margin-left: 2rem;
+  font-size: 1.6rem;
+  color: var(--pink-text);
+}
+
+.form-input:placeholder-shown+.form-label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+  transition: all 0.3s ease;
+}
+
+.form-title {
+  color: var(--main-red);
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.form-bg {
+  background-color: black;
+  background-image: url(/images/doomsday-bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 4rem 0 8rem;
+  background-attachment: fixed;
+}
+
+.para-form {
+  color: var(--pink-text)
+}
+
+.para-control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+.link-to {
+  color: var(--main-red);
+  font-size: 1.4rem;
+  text-decoration: none;
+}
+
+.btn {
+  background-color: var(--red-btn);
+  color: var(--pink-text);
+  border: none;
+  padding: 1rem;
+  width: 50%;
+  border-radius: 4rem;
+  font-size: 1.6rem;
+  display: inline-block;
+  transition: all 0.4s;
+  position: relative;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn:active,
+.btn:focus {
+  outline: none;
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 4rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn-after::after {
+  background-color: var(--red-btn);
+}
+
+.login-title {
+  margin-bottom: 4rem;
+}
+
+/************************* home *****************************/
+.home-bg {
+  background-color: black;
+  background-image: url(/images/doomsday-bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 24rem 0;
+  background-attachment: fixed;
+
+}
+
+.main-title {
+  color: var(--main-red);
+  margin-bottom: 2rem;
+}
+
+.main-subtitle {
+  color: var(--second-red);
+  margin-bottom: 8rem;
+  padding-bottom: 2rem;
+  font-weight: 400;
+  border-bottom: 1px solid var(--main-red);
+}
+
+.home-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.btn-home {
+  text-align: center;
+  margin: 1rem 0;
+}
