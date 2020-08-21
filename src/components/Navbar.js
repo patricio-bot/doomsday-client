@@ -14,8 +14,9 @@ class Navbar extends Component {
         </Link>
         {isLoggedin &&
           <>
-            <p className='navbar-user'>username: {user.firstName} {user.lastName}</p>
-            <button className='navbar-button' onClick={logout}>Logout</button>
+            <p className='navbar-user'>{user.firstName} {user.lastName}</p>
+            {/* <button className='fas fa-sign-out-alt' onClick={logout}>Logout</button> */}
+            <i class="fas fa-sign-out-alt" onClick={logout}></i>
           </>
         }
       </nav>

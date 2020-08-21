@@ -6,7 +6,7 @@
 
 :root {
   font-size: 62.5%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   --red-btn: #8b0a0a;
   --main-red: #fc4e4e;
   --second-red: #ff8383;
@@ -76,14 +76,11 @@ button.navbar-button {
   margin: 0 10px;
 }
 
-#home-btn {
+#home-btn,
+.fa-sign-out-alt {
   color: var(--main-red);
   text-decoration: none;
-}
-
-.fa-fire {
   font-size: 2.4rem;
-  color: var(--red-btn);
 }
 
 /**************** alert form **********************/
@@ -91,7 +88,6 @@ button.navbar-button {
   padding: 2rem;
   margin: 1rem 0;
   opacity: 0.9;
-
 }
 
 .alert-msg {
@@ -133,7 +129,6 @@ button.navbar-button {
   padding: 2rem 2rem 4rem;
 }
 
-
 .form-group {
   display: flex;
   flex-direction: column;
@@ -172,7 +167,7 @@ button.navbar-button {
   color: var(--pink-text);
 }
 
-.form-input:placeholder-shown+.form-label {
+.form-input:placeholder-shown + .form-label {
   opacity: 0;
   visibility: hidden;
   transform: translateY(-4rem);
@@ -196,7 +191,7 @@ button.navbar-button {
 }
 
 .para-form {
-  color: var(--pink-text)
+  color: var(--pink-text);
 }
 
 .para-control {
@@ -273,7 +268,6 @@ button.navbar-button {
   background-position: center;
   padding: 24rem 0;
   background-attachment: fixed;
-
 }
 
 .main-title {
