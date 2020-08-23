@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
 
-import Navbar from "./components/Navbar";
+
 
 import Signup from './pages/Signup';
 import Login from './pages/Login';

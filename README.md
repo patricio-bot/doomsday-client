@@ -60,12 +60,12 @@
 | `/logout`          | n/a           | anon only       | Go to public homepage, expire session                                                                        |
 | `/dashboard`       | Dashboard     | user            | Show Doomsday counter, the App mode and links to other pages                                                 |
 | `/dashboard/:data` | DoomsdayData  | user            | Show the initial form to collect data from the user. Navigate to dashboard with the counter and the App mode |
-| `/tasks`           | TaskList      | user            | Display the tasks assigned to the user by the App according to the chosen mode                               |
-| `/tasks/:id`       | TaskCard      | user            | Display the details of a specific task                                                                       |
-| `/tasks/add`       | CreateTask    | user            | As a user I can add new tasks according to the App mode                                                      |
+| `/task`            | TaskList      | user            | Display the tasks assigned to the user by the App according to the chosen mode                               |
+| `/task/:id`        | TaskCard      | user            | Display the details of a specific task                                                                       |
+| `/task/add`        | CreateTask    | user            | As a user I can add new tasks according to the App mode                                                      |
 | `/users`           | ListUsers     | user            | Show all users in The Judges' wall                                                                           |
-| `/users/:id`       | UserCard      | user            | Show details of an user                                                                                      |
-| `/users/edit/:id`  | EditUser      | user            | Edit details of the user                                                                                     |
+| `/user/:id`        | UserCard      | user            | Show details of an user                                                                                      |
+| `/user/edit/:id`   | EditUser      | user            | Edit details of the user                                                                                     |
 | `/users/necrology` | ListUsers     | user            | Show all dead users in Necrology page                                                                        |
 | `/sins/user/:id`   | ListSins      | user            | Show all the probably causes of death for a particular user                                                  |
 | `sins/:id`         | SinCard       | user            | Show details of an illness, its causes and symptoms                                                          |
@@ -188,20 +188,21 @@ Sin model
 
 ---
 
-| **Method** | **Route**           | **Description**                                        | **Request Body**                                   |
-| ---------- | ------------------- | ------------------------------------------------------ | -------------------------------------------------- |
-| `GET`      | `/auth/me`          | Check if user is logged                                | Saved session                                      |
-| `POST`     | `/auth/signup`      | Create user and store it in session                    | {firstName, lastName,email,password,gender}        |
-| `POST`     | `/auth/login`       | Stores user in session                                 | {email,password}                                   |
-| `POST`     | `/auth/logout`      | Destroy the session                                    | (empty)                                            |
-| `GET`      | `/users`            | Show all users in Judges' wall                         |                                                    |
-| `GET`      | `/users/:id`        | User' details                                          | {id}                                               |
-| `PUT`      | `/users/edit/:id`   | Edit the user profile                                  | {image,firstName,lastName}                         |
-| `GET`      | `/tasks`            | Show all tasks                                         |                                                    |
-| `GET`      | `/tasks/:id`        | Display an specific task                               | {id}                                               |
-| `POST`     | `/tasks/add`        | Creates a new task                                     | {author, image,kind,punctuation,title,description} |
-| `DELETE`   | `/tasks/delete/:id` | Delete an specific task already created by the user    | {id}                                               |
-| `GET`      | `/sins/user/:id`    | Display all the diseases associated with the user      | {id}                                               |
-| `GET`      | `/sins/:id`         | Display a specific disease and its causes and symptoms | {id}                                               |
-| `POST`     | `/dashboard/:data`  | Retrieve all the user information and stores it in DB  |                                                    |
-| `GET`      | `/users/necrology`  | Show all dead users                                    | {status}                                           |
+| **Method** | **Route**          | **Description**                                        | **Request Body**                                      |
+| ---------- | ------------------ | ------------------------------------------------------ | ----------------------------------------------------- |
+| `GET`      | `/auth/me`         | Check if user is logged                                | Saved session                                         |
+| `POST`     | `/auth/signup`     | Create user and store it in session                    | {firstName, lastName,email,password,gender}           |
+| `POST`     | `/auth/login`      | Stores user in session                                 | {email,password}                                      |
+| `POST`     | `/auth/logout`     | Destroy the session                                    | (empty)                                               |
+| `GET`      | `/user`            | Show all users                                         |                                                       |
+| `GET`      | `/user/:id`        | User' details                                          | {id}                                                  |
+| `PUT`      | `/user/edit`       | Edit the user profile                                  | {image,firstName,lastName}                            |
+| `GET`      | `/task`            | Show all tasks                                         |                                                       |
+| `GET`      | `/task/:id`        | Display an specific task                               | {id}                                                  |
+| `POST`     | `/task/add`        | Creates a new task                                     | {author, image,kind,punctuation,title,description}    |
+| `PUT`      | `/task/edit/:id`   | Edit task                                              | {id,author, image,kind,punctuation,title,description} |
+| `DELETE`   | `/task/delete/:id` | Delete an specific task already created by the user    | {id}                                                  |
+| `GET`      | `/sins/user/:id`   | Display all the diseases associated with the user      | {id}                                                  |
+| `GET`      | `/sins/:id`        | Display a specific disease and its causes and symptoms | {id}                                                  |
+| `POST`     | `/user/data`       | Update all the user information and stores it in DB    |                                                       |
+| `GET`      | `/users/necrology` | Show all dead users                                    | {status}                                              |
