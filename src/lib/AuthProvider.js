@@ -63,7 +63,11 @@ export default class AuthProvider extends Component {
 
     logout = () => {
         auth.logout()
-            .then(() => this.setState({ isLoggedin: false, user: null }))
+            .then(() => {
+
+                this.setState({ isLoggedin: false, user: null })
+
+            })
             .catch((err) => console.log(err));
     };
 

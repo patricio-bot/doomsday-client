@@ -9,15 +9,25 @@ class Navbar extends Component {
     return (
 
       <nav className='navbar'>
-        <Link className='fas fa-fire' to={"/"} id='home-btn'>
 
-        </Link>
-        {isLoggedin &&
-          <>
-            <p className='navbar-user'>{user.firstName} {user.lastName}</p>
-            {/* <button className='fas fa-sign-out-alt' onClick={logout}>Logout</button> */}
-            <i class="fas fa-sign-out-alt" onClick={logout}></i>
-          </>
+        {isLoggedin ?
+          (<>
+            <Link to='/edit' className="fas fa-user-cog"></Link>
+
+            <i className="fas fa-book-dead"></i>
+            <Link className='fas fa-fire' to={`/user/${user._id}`} id='dashboard-btn'>
+
+            </Link>
+            <Link className="fas fa-balance-scale-right" to={'/user'}></Link>
+            {/* <i className="fas fa-balance-scale-right"></i> */}
+            <i className="fas fa-sign-out-alt" onClick={logout}></i>
+          </>) : (
+            <>
+              <Link className='fas fa-fire' to={"/"} id='home-btn'>
+
+              </Link>
+            </>
+          )
         }
       </nav>
     );

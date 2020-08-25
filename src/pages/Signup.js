@@ -64,7 +64,7 @@ class Signup extends Component {
                     <label className="form-label" htmlFor="password-input">Password</label>
                   </div>
                   <div className="form-group">
-                    <button className="btn btn-after">Register</button>
+                    <button className="btn btn-after btn-big">Register</button>
                   </div>
 
                 </form>

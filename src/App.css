@@ -19,7 +19,7 @@
 }
 
 img {
-  width: 100%;
+  max-width: 100%;
 }
 
 h1 {
@@ -57,31 +57,31 @@ a {
 
 .navbar {
   display: flex;
-  padding: 20px;
+  padding: 2rem;
   background: black;
-  justify-content: center;
+  justify-content: space-around;
   position: fixed;
   width: 100%;
-}
-
-nav.navbar .navbar-user {
-  margin-left: 10px;
-  color: white;
-}
-
-button.navbar-button {
-  padding: 5px 20px;
-  width: 100px;
-  border-radius: 3px;
-  margin: 0 10px;
+  z-index: 1000;
 }
 
 #home-btn,
-.fa-sign-out-alt {
+#dashboard-btn,
+.fa-sign-out-alt,
+.fa-balance-scale-right,
+.fa-book-dead,
+.fa-user-cog {
   color: var(--main-red);
   text-decoration: none;
   font-size: 2.4rem;
+  cursor: pointer;
 }
+
+/* #dashboard-btn:link,
+#dashboard-btn:visited,
+#dashboard-btn:active {
+  color: var(--red-btn);
+} */
 
 /**************** alert form **********************/
 .alert {
@@ -152,7 +152,7 @@ button.navbar-button {
 }
 
 .login-form {
-  padding: 4rem 0;
+  padding: 2rem 0;
 }
 
 .form-input:focus {
@@ -213,7 +213,7 @@ button.navbar-button {
   border: none;
   padding: 1rem;
   width: 50%;
-  border-radius: 4rem;
+  /* border-radius: 4rem; */
   font-size: 1.6rem;
   display: inline-block;
   transition: all 0.4s;
@@ -244,7 +244,7 @@ button.navbar-button {
   display: inline-block;
   height: 100%;
   width: 100%;
-  border-radius: 4rem;
+  /* border-radius: 4rem; */
   position: absolute;
   top: 0;
   left: 0;
@@ -257,7 +257,7 @@ button.navbar-button {
 }
 
 .login-title {
-  margin-bottom: 4rem;
+  margin: 2rem 0;
 }
 
 /************************* home *****************************/
@@ -266,7 +266,7 @@ button.navbar-button {
   background-image: url(/images/doomsday-bg.png);
   background-repeat: no-repeat;
   background-position: center;
-  padding: 24rem 0;
+  padding: 20rem 0 4rem;
   background-attachment: fixed;
 }
 
@@ -294,4 +294,254 @@ button.navbar-button {
 .btn-home {
   text-align: center;
   margin: 1rem 0;
+}
+
+/*********************** dashboard ***********************/
+.dashboard-bg {
+  background-color: black;
+  background-image: url(/images/doomsday-bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 4rem;
+  margin-bottom: 8rem;
+  /* padding: 0rem 0 80rem; */
+  background-attachment: fixed;
+}
+
+/********************* userlist *********************/
+.users-container {
+  padding: 8rem 2rem;
+}
+
+.search-btn {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.users-box-card {
+  margin: 4rem 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.user-card {
+  padding-bottom: 4rem;
+  width: 100%;
+  /*  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.user-card-img {
+  margin-bottom: 2rem;
+  width: 80%;
+}
+
+.user-card-img img {
+  border-radius: 20%;
+}
+
+.card-box-content,
+.card-box-content a {
+  color: var(--main-red);
+  border-bottom: 1px solid var(--red-btn);
+}
+.detail-box {
+  color: var(--main-red);
+}
+.detail-img {
+  border-radius: 20%;
+  width: 80%;
+  margin: auto;
+  display: block;
+}
+.detail-box-info {
+  text-align: center;
+  margin: 2rem 0;
+  text-transform: capitalize;
+}
+.detail-box-info h2 {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--red-btn);
+}
+.detail-box-info p {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+.checkbox-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--main-red);
+}
+.checkbox-input {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+}
+.detail-label {
+  font-size: 1.6rem;
+  margin-right: 2rem;
+}
+.label-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 1.4rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.label-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+/* On mouse-over, add a grey background color */
+.label-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.label-container input:checked ~ .checkmark {
+  background-color: var(--red-btn);
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.label-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.label-container .checkmark:after {
+  top: 5px;
+  left: 5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--main-red);
+}
+.detail-select {
+  font-size: 1.6rem;
+  padding: 1rem;
+  background-color: var(--input-bg);
+  border: none;
+  color: var(--input-text);
+  margin-bottom: 2rem;
+}
+.detail-select:focus {
+  outline: none;
+  border: 1px solid var(--main-red);
+  box-shadow: 0px 10px 5px 0px rgba(110, 2, 2, 0.534);
+}
+.btn-big {
+  width: 100%;
+  margin: 2rem 0;
+}
+.detail-days p {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.detail-days h3 {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+}
+.detail-sins {
+  text-align: justify;
+}
+.detail-sins h4 {
+  margin: 2rem 0;
+  padding: 1rem 0;
+  border-bottom: 2px solid var(--main-red);
+  border-top: 1px solid var(--main-red);
+}
+.detail-data {
+  text-align: left;
+}
+.detail-description {
+  grid-area: 3/1/4/1;
+}
+
+.detail-btn-mode button {
+  margin: 1rem;
+}
+/****************************** media queries *****************/
+@media screen and (min-width: 600px) {
+  .home-bg,
+  .dashboard-bg {
+    padding-bottom: 50rem;
+  }
+
+  .login-form {
+    padding: 10rem 0;
+  }
+
+  .login-container {
+    margin-top: 8rem;
+  }
+
+  .users-box-card {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+  }
+  .form-grid {
+    grid-area: 2/1/4/3;
+  }
+  .detail-box-info {
+    text-align: left;
+  }
+  .label-container {
+    font-size: 2.2rem;
+  }
+  .detail-sins {
+    grid-area: 4/1/5/3;
+  }
+  .detail-days {
+    grid-area: 2/1/2/3;
+    text-align: center;
+  }
+  .detail-days p {
+    font-size: 4rem;
+    font-weight: 700;
+  }
+  .detail-btn-mode {
+    grid-area: 5/1/6/3;
+    text-align: center;
+  }
+  .detail-btn-mode button {
+    margin: 1rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .users-box-card {
+    margin: 8rem 0;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
 }
