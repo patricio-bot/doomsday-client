@@ -182,7 +182,7 @@ class UserDetails extends Component {
                                     <div className="detail-box detail-box-info detail-btn-mode">
                                         <h2>Pick a mode to get tasks</h2>
                                         <button className="btn btn-after">
-                                            Bet Mode
+                                            Gamble Mode
                                         </button>
                                         <button className="btn btn-after">
                                             Challenge Mode
