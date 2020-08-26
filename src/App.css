@@ -54,7 +54,10 @@ p {
 a {
   text-decoration: none;
 }
-
+ul,
+ol {
+  list-style: none;
+}
 .navbar {
   display: flex;
   padding: 2rem;
@@ -323,7 +326,20 @@ a {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
 }
+.tasks-list {
+  margin: 4rem 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+.task-box-card {
+  margin: 4rem 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
 
+.li-box {
+  margin: 2rem auto;
+}
 .user-card {
   padding-bottom: 4rem;
   width: 100%;
@@ -501,6 +517,16 @@ a {
 .detail-btn-mode button {
   margin: 1rem;
 }
+.score-ctrl {
+  line-height: 2;
+}
+.detail-task-info {
+  margin: 2rem 0;
+  line-height: 1.7;
+}
+.detail-task-info p {
+  text-align: justify;
+}
 /****************************** media queries *****************/
 @media screen and (min-width: 600px) {
   .home-bg,
@@ -520,6 +546,22 @@ a {
     grid-template-columns: repeat(2, 1fr);
     gap: 4rem;
   }
+  .task-box-card {
+    grid-template-columns: repeat(1, 600px);
+    grid-area: 5/1 /6/3;
+    gap: 1rem;
+    margin: auto;
+    width: 90%;
+  }
+  .li-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .profile-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-area: 1/1/2/3;
+  }
   .form-grid {
     grid-area: 2/1/4/3;
   }
@@ -530,7 +572,7 @@ a {
     font-size: 2.2rem;
   }
   .detail-sins {
-    grid-area: 4/1/5/3;
+    grid-area: 3/1/4/3;
   }
   .detail-days {
     grid-area: 2/1/2/3;
@@ -541,11 +583,14 @@ a {
     font-weight: 700;
   }
   .detail-btn-mode {
-    grid-area: 5/1/6/3;
+    grid-area: 4/1/5/3;
     text-align: center;
   }
   .detail-btn-mode button {
     margin: 1rem;
+  }
+  .detail-task-info {
+    margin: initial;
   }
 }
 
@@ -556,12 +601,25 @@ a {
     gap: 2rem;
   }
   .detail-sins {
-    grid-area: 4/1/5/4;
+    grid-area: 3/1/4/4;
   }
   .detail-days {
-    grid-area: 2/1/2/4;
+    grid-area: 2/1/3/4;
   }
   .detail-btn-mode {
-    grid-area: 5/1/6/4;
+    grid-area: 4/1/5/4;
+  }
+  .profile-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-area: 1/1/2/4;
+  }
+  .task-box-card {
+    grid-template-columns: repeat(1, 900px);
+    grid-area: 5/1 /6/4;
+    gap: 4rem;
+  }
+  .detail-img {
+    width: 60%;
   }
 }

@@ -168,23 +168,25 @@ class UserDetails extends Component {
                         <div className='dashboard-bg'>
                             <div className="users-container">
                                 <div className="users-box-card">
-                                    <div className="detail-box">
-                                        <img className='detail-img' src={image} alt={firstName} />
+                                    <div className="profile-box">
+                                        <div className="detail-box">
+                                            <img className='detail-img' src={image} alt={firstName} />
 
-                                    </div>
-                                    <div className="detail-box detail-box-info detail-data">
-                                        <h2>{firstName} {lastName}</h2>
-                                        <p>Gender: {gender}</p>
-                                        <p>Tasks Created: {tasksCreated}</p>
-                                        <p>Age: {age}</p>
-                                        <p>Height: {height}</p>
-                                        <p>BMI: {health}</p>
-                                        {/*  <p>{yearsRemaining}</p>
+                                        </div>
+                                        <div className="detail-box detail-box-info detail-data">
+                                            <h2>{firstName} {lastName}</h2>
+                                            <p>Gender: {gender}</p>
+                                            <p>Tasks Created: {tasksCreated}</p>
+                                            <p>Age: {age}</p>
+                                            <p>Height: {height}</p>
+                                            <p>BMI: {health}</p>
+                                            {/*  <p>{yearsRemaining}</p>
                                         <p>{days}:{hours}:{minutes}:{seconds} </p> */}
-                                        <p>About: {firstName} </p>
-                                        <p>{description}</p>
+                                            <p>About: {firstName} </p>
+                                            <p>{description}</p>
 
 
+                                        </div>
                                     </div>
                                     {/* <div className="detail-box detail-box-info detail-description">
                                         <p>About: {firstName} </p>
@@ -218,8 +220,8 @@ class UserDetails extends Component {
                                             Challenge Mode
                                         </button>
                                     </div>
-                                    <div className="detail-box detail-box-info">
-                                        <ul>
+                                    <div className="detail-box detail-box-info ">
+                                        <ul className='task-box-card'>
                                             {this.state.tasksToShow.map((item, index) => <TaskCard key={index} {...item} />
                                             )}
                                         </ul>
