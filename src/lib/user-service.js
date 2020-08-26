@@ -6,7 +6,7 @@ class User {
     constructor() {
 
         this.user = axios.create({
-            baseURL: `${baseUrl}/user`,
+            baseURL: `${baseUrl}/api/user`,
             withCredentials: true
         });
     }

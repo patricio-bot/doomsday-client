@@ -527,6 +527,25 @@ ol {
 .detail-task-info p {
   text-align: justify;
 }
+.Modal {
+  position: fixed;
+  z-index: 500;
+  background-color: black;
+  width: 70%;
+  border: 1px solid var(--main-red);
+  box-shadow: 1px 1px 1px rgb(241, 5, 5);
+  padding: 16px;
+  left: 15%;
+  top: 30%;
+  box-sizing: border-box;
+  transition: all 0.3s ease-out;
+  color: var(--main-red);
+}
+.Modal h3 {
+  border-bottom: 2px solid var(--danger-color);
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
 /****************************** media queries *****************/
 @media screen and (min-width: 600px) {
   .home-bg,
@@ -591,6 +610,10 @@ ol {
   }
   .detail-task-info {
     margin: initial;
+  }
+  .Modal {
+    width: 500px;
+    left: calc(50% - 250px);
   }
 }
 
