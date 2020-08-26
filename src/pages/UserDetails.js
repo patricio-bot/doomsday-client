@@ -81,7 +81,7 @@ class UserDetails extends Component {
             let minutes = Math.abs(Math.floor((countDownDate % (1000 * 60 * 60)) / (1000 * 60)));
             let seconds = Math.abs(Math.floor((countDownDate % (1000 * 60)) / 1000));
             this.setState({ days, hours, minutes, seconds })
-            console.log({ days, hours, minutes, seconds });
+
         }, 1000)
 
 

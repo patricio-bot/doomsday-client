@@ -1,6 +1,6 @@
 # DOOMSDAY
 
-### Believing in Judgment Day
+### Believing in Judgement Day
 
 ---
 
