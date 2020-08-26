@@ -367,7 +367,7 @@ a {
 .detail-box-info h2 {
   padding-bottom: 1rem;
   margin-bottom: 1rem;
-  border-bottom: 1px solid var(--red-btn);
+  border-bottom: 2px solid var(--red-btn);
 }
 .detail-box-info p {
   font-size: 1.8rem;
@@ -467,6 +467,11 @@ a {
   font-size: 3rem;
   font-weight: 700;
 }
+.detail-days span {
+  font-weight: 400;
+  font-size: 2.4rem;
+  text-transform: lowercase;
+}
 .detail-days h3 {
   font-size: 2.4rem;
   margin-bottom: 2rem;
@@ -482,11 +487,17 @@ a {
 }
 .detail-data {
   text-align: left;
+  border-bottom: 2px solid var(--red-btn);
+}
+.detail-data p {
+  padding: 1rem 0;
 }
 .detail-description {
   grid-area: 3/1/4/1;
 }
-
+.detail-btn-mode {
+  text-align: center;
+}
 .detail-btn-mode button {
   margin: 1rem;
 }
@@ -543,5 +554,14 @@ a {
     margin: 8rem 0;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+  }
+  .detail-sins {
+    grid-area: 4/1/5/4;
+  }
+  .detail-days {
+    grid-area: 2/1/2/4;
+  }
+  .detail-btn-mode {
+    grid-area: 5/1/6/4;
   }
 }
