@@ -27,6 +27,11 @@ class User {
             .put(`/edit`, userUpdated)
             .then(({ data }) => data);
     }
+    addTasks(tasks) {
+        return this.user
+            .put(`/tasks`, { tasks })
+            .then(({ data }) => data);
+    }
 
 }
 

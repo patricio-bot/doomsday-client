@@ -2,9 +2,12 @@ import React, { Component, Fragment } from 'react';
 import { withAuth } from '../lib/AuthProvider';
 import Navbar from '../components/Navbar';
 import userService from '../lib/user-service';
+import getTasks from '../helpers/tasks.json';
 import auth from '../lib/auth-service';
 import { Link } from 'react-router-dom';
 import EditForm from '../components/EditForm';
+import TaskCard from '../components/TaskCard';
+import axiosRequestFunctions from '../lib/auth-service';
 
 
 class UserDetails extends Component {
@@ -27,14 +30,19 @@ class UserDetails extends Component {
                 isSmoker: false,
                 description: '',
                 hasSins: [],
+                hasTasks: [],
                 yearsRemaining: 1,
                 days: undefined,
                 minutes: undefined,
                 hours: undefined,
-                seconds: undefined
+                seconds: undefined,
+                completedProfile: false
 
             },
-            timerId: null
+            timerId: null,
+            allTasks: getTasks,
+            tasksToShow: []
+
 
         }
     }
@@ -43,7 +51,7 @@ class UserDetails extends Component {
         const id = this.props.match.params.id;
         userService.getOne(id)
             .then((user) => {
-                this.setState({ user, currentUser: isCurrentUser })
+                this.setState({ user, currentUser: isCurrentUser, tasksToShow: user.hasTasks })
             })
             .catch(error => console.log(error))
 
@@ -76,27 +84,12 @@ class UserDetails extends Component {
             console.log({ days, hours, minutes, seconds });
         }, 1000)
 
+
     }
     componentWillUnmount() {
         clearTimeout(window.timeout)
     }
-    /* componentDidUpdate() {
-        setInterval(() => {
 
-            let now = new Date().getTime();
-
-            let f = new Date("Aug 25, 2065 15:37:25").getTime();
-            let future = Math.floor(this.state.user.yearsRemaining * 31536000000);
-            let countDownDate = f - now;
-            console.log({ now, future });
-            let days = Math.abs(Math.floor(countDownDate / (1000 * 60 * 60 * 24)));
-            let hours = Math.abs(Math.floor((countDownDate % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
-            let minutes = Math.abs(Math.floor((countDownDate % (1000 * 60 * 60)) / (1000 * 60)));
-            let seconds = Math.abs(Math.floor((countDownDate % (1000 * 60)) / 1000));
-            this.setState({ days, hours, minutes, seconds })
-            console.log({ days, hours, minutes, seconds });
-        }, 1000)
-    } */
     handleLogout = e => {
         e.preventDefault();
         clearTimeout(window.timeout)
@@ -128,7 +121,39 @@ class UserDetails extends Component {
             })
 
     }
+    getChallengeTask = () => {
+        const tasksCopy = [...this.state.allTasks]
+        const filteredTask = tasksCopy.filter((taskObj) => {
+            if (taskObj.kind.includes('challenge')) {
+                return true
+            } else {
+                return false
+            }
+        })
+        this.setState({ tasksToShow: filteredTask }, () => {
+            this.updateTasks()
+        })
 
+    }
+    getGambleTask = () => {
+        const tasksCopy = [...this.state.allTasks]
+        const filteredTask = tasksCopy.filter((taskObj) => {
+            if (taskObj.kind.includes('gamble')) {
+                return true
+            } else {
+                return false
+            }
+        })
+        this.setState({ tasksToShow: filteredTask }, () => {
+            this.updateTasks()
+        })
+        console.log(filteredTask);
+    }
+    updateTasks = () => {
+        userService.addTasks(this.state.tasksToShow)
+            .then(() => { })
+            .catch(err => console.log(err))
+    }
 
     render() {
         let { firstName, lastName, gender, isSmoker, isDrinker, age, country, image, tasksCreated, weight, height, health, hasSins, yearsRemaining, description } = this.state.user
@@ -156,18 +181,22 @@ class UserDetails extends Component {
                                         <p>BMI: {health}</p>
                                         {/*  <p>{yearsRemaining}</p>
                                         <p>{days}:{hours}:{minutes}:{seconds} </p> */}
-
-
-                                    </div>
-                                    <div className="detail-box detail-box-info detail-description">
                                         <p>About: {firstName} </p>
                                         <p>{description}</p>
-                                    </div>
 
-                                    <div className="detail-box detail-box-info detail-days">
-                                        <h3>Life Expectancy</h3>
-                                        <p>{days} : {hours} : {minutes} : {seconds} </p>
+
                                     </div>
+                                    {/* <div className="detail-box detail-box-info detail-description">
+                                        <p>About: {firstName} </p>
+                                        <p>{description}</p>
+                                    </div> */}
+                                    {this.state.user.completedProfile &&
+                                        <div className="detail-box detail-box-info detail-days">
+                                            <h3>Life Expectancy</h3>
+                                            <p>{days} <span>d</span> : {hours} <span>h</span>  : {minutes} <span>m</span>  : {seconds} <span>s</span>  </p>
+                                        </div>
+
+                                    }
                                     <div className="detail-box detail-box-info detail-sins">
                                         <h3>Probable Causes of Death</h3>
                                         {this.state.user.hasSins.map((sin, index) => {
@@ -179,14 +208,21 @@ class UserDetails extends Component {
                                             </div>
                                         })}
                                     </div>
+
                                     <div className="detail-box detail-box-info detail-btn-mode">
                                         <h2>Pick a mode to get tasks</h2>
-                                        <button className="btn btn-after">
+                                        <button id='gamble' className="btn btn-after" onClick={this.getGambleTask}>
                                             Gamble Mode
                                         </button>
-                                        <button className="btn btn-after">
+                                        <button id='challenge' className="btn btn-after" onClick={this.getChallengeTask}>
                                             Challenge Mode
                                         </button>
+                                    </div>
+                                    <div className="detail-box detail-box-info">
+                                        <ul>
+                                            {this.state.tasksToShow.map((item, index) => <TaskCard key={index} {...item} />
+                                            )}
+                                        </ul>
                                     </div>
 
 
