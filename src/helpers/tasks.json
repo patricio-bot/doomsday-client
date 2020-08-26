@@ -1,61 +1,72 @@
-[{
-        "title": "French Kiss to Santiago Abascal",
-        "description": "If you are a man, fulfilling this task ensures a reduction in your life span equal to zero. If you are a woman, you will not reduce your life span to zero, but you will reduce it by a couple of years since you will fall into a deep depression that can lead to suicide.",
-        "score": -10,
-        "kind": "gamble"
-    },
-    {
-        "title": "Let the alcohol set you free",
-        "description": "The goal is to get to the point where you don't remember when you parked your car after drinking, embarrassing yourself at a party, or waking up unable to know where you are. If you habitually send inappropriate messages when you are drinking, you have sex with people who, if not for alcohol, you would not choose; You use other substances together with alcohol or you drive under the influence of alcohol, we assure you that your remaining life time will be reduced.",
-        "score": -8,
-        "kind": "gamble"
-    },
-    {
-        "title": "Ronald McDonald loves you",
-        "description": "There are 540 calories in a regular Big Mac (with cheese and sauce). But this will not only get you fat and raises your blood sugar to abnormal levels. But you will also get high, since food with high caloric content activates the reward system in the brain, which releases chemicals that make you feel good, such as dopamine, the same substance that sex releases, chocolate and drugs. This process works in a similar way to that of drugs such as cocaine!-although we recommend not snorting it. And there's no jail time for eating a juicy Big Mac.",
-        "score": -6,
-        "kind": "gamble"
-    },
-    {
-        "title": "Unprotected sex is groovy",
-        "description": "You know that unsafe sex may put you or your partner at risk of STIs such as chlamydia, gonorrhoea, syphilis, Mycoplasma genitalium, HIV or hepatitis B, or may result in an unplanned pregnancy. Ever heard the saying that when you have sex with someone, you’re having sex with everyone they’ve ever had sex with?. You know that you’re more likely to get HIV or another STD when you have more than one sex partner, or many sex partners during your lifetime. That’s because more people mean more chances that one or more of them will have HIV or an infection. But Do you remember Austin Powers?.",
-        "score": -8,
-        "kind": "gamble"
-    },
-    {
-        "title": "Do you want to be like Steve Jobs?",
-        "description": "Sign up for an 8 week Bootcamp. Can you imagine spending 8 hours a day learning code, without having free weekends or social life? Anxiety, depression, nerves, panic attacks, intermittent diarrhea, will be your allies for 8 weeks. Easy peasy!",
-        "score": -5,
-        "kind": "gamble"
-    },
-    {
-        "title": "Turn into a Rabbit",
-        "description": "Adopt a healthy diet, which means a mostly plant-based diet that entails regularly eating healthy foods like vegetables, fruits, nuts, whole grains, healthy plant-or-nut fats, and omega-3 fatty acids. Avoid unhealthy foods like red and processed meats, sugar-sweetened beverages, trans fat, and excess sodium.",
-        "score": 10,
-        "kind": "challenge"
-    },
-    {
-        "title": "Become a Muscle Head",
-        "description": "Physical activity has been shown to help maintain a healthy body weight, maintain healthy bones, muscles and joints, promote psychological well-being and reduce the risk of certain diseases, including some cancers. The goal is to stay within a BMI range that indicates a healthy body weight. Want to drop weight quickly, naturally and relatively easily? Intermittent fasting appears to work as a way of losing weight and keeping it off",
-        "score": 8,
-        "kind": "challenge"
-    },
-    {
-        "title": "Be like Gandhi",
-        "description": "Fasting for short bursts is as ancient as humankind. Humans were not built to eat all the time, snacking and gorging all day long. Instead, try different windows for eating (such as ten hours on, 14 hours off) and find the one that works for you. We suggest that you start with the most popular window: Eat for 8 hours and fast for 16. So if you have dinner at 7 p.m. and finish by 8 p.m. (including wine) then fast until noon or slightly after the next day. Then you get the next eight hours to eat. While you can eat what you want, the body will be more likely to not store calories as fat if you stay away from the carbs. Other than that this diet works for plant-based and omnivores alike. Of course, the healthier you eat the better your body will feel, and the healthier you will be.",
-        "score": 5,
-        "kind": "challenge"
-    },
-    {
-        "title": "Farewell the Ashtray girl",
-        "description": "Smoking is strongly linked to disease and early death .Overall, people who smoke may lose up to 10 years of life and be 3 times more likely to die prematurely than those who never pick up a cigarette. Keep in mind that it’s never too late to quit. One study reports that individuals who quit smoking by age 35 may prolong their lives by up to 8.5 years. Furthermore, quitting smoking in your 60s may add up to 3.7 years to your life. In fact, quitting in your 80s may still provide benefits.",
-        "score": 8,
-        "kind": "challenge"
-    },
-    {
-        "title": "Turn into a Groundhog",
-        "description": "Sleep is crucial for regulating cell function and helping your body heal. A recent study reports that longevity is likely linked to regular sleeping patterns, such as going to bed and waking up around the same time each day. Sleep duration also seems to be a factor, with both too little and too much being harmful. For instance, sleeping less than 5–7 hours per night is linked to a 12% greater risk of early death, while sleeping more than 8–9 hours per night could also decrease your lifespan by up to 38%. Anyway, you won't miss a thing while you sleep. The next day the world will remain the same old shit.",
-        "score": 6,
-        "kind": "challenge"
-    }
+[
+  {
+    "image": "https://res.cloudinary.com/dk85ozjx3/image/upload/v1598452128/images/french-kiss_eurqia.jpg",
+    "title": "French Kiss to Santiago Abascal",
+    "description": "If you are a man, fulfilling this task ensures a reduction in your life span equal to zero. If you are a woman, you will not reduce your life span to zero, but you will reduce it by a couple of years since you will fall into a deep depression that can lead to suicide.",
+    "score": -10,
+    "kind": "gamble"
+  },
+  {
+    "image": "https://res.cloudinary.com/dk85ozjx3/image/upload/v1598452132/images/alcohol_fjkfq3.jpg",
+    "title": "Let the alcohol set you free",
+    "description": "The goal is to get to the point where you don't remember when you parked your car after drinking, embarrassing yourself at a party, or waking up unable to know where you are. If you habitually send inappropriate messages when you are drinking, you have sex with people who, if not for alcohol, you would not choose; You use other substances together with alcohol or you drive under the influence of alcohol, we assure you that your remaining life time will be reduced.",
+    "score": -8,
+    "kind": "gamble"
+  },
+  {
+    "image": "https://res.cloudinary.com/dk85ozjx3/image/upload/v1598452129/images/macdonalds_wqtaub.jpg",
+    "title": "Ronald McDonald loves you",
+    "description": "There are 540 calories in a regular Big Mac (with cheese and sauce). But this will not only get you fat and raises your blood sugar to abnormal levels. But you will also get high, since food with high caloric content activates the reward system in the brain, which releases chemicals that make you feel good, such as dopamine, the same substance that sex releases, chocolate and drugs. This process works in a similar way to that of drugs such as cocaine!-although we recommend not snorting it. And there's no jail time for eating a juicy Big Mac.",
+    "score": -6,
+    "kind": "gamble"
+  },
+  {
+    "image": "https://res.cloudinary.com/dk85ozjx3/image/upload/v1598452130/images/unprotected-sex_qzeudz.jpg",
+    "title": "Unprotected sex is groovy",
+    "description": "You know that unsafe sex may put you or your partner at risk of STIs such as chlamydia, gonorrhoea, syphilis, Mycoplasma genitalium, HIV or hepatitis B, or may result in an unplanned pregnancy. Ever heard the saying that when you have sex with someone, you’re having sex with everyone they’ve ever had sex with?. You know that you’re more likely to get HIV or another STD when you have more than one sex partner, or many sex partners during your lifetime. That’s because more people mean more chances that one or more of them will have HIV or an infection. But Do you remember Austin Powers?.",
+    "score": -8,
+    "kind": "gamble"
+  },
+  {
+    "image": "https://res.cloudinary.com/dk85ozjx3/image/upload/v1598452129/images/steve-jobs_pljf2e.jpg",
+    "title": "Do you want to be like Steve Jobs?",
+    "description": "Sign up for an 8 week Bootcamp. Can you imagine spending 8 hours a day learning code, without having free weekends or social life? Anxiety, depression, nerves, panic attacks, intermittent diarrhea, will be your allies for 8 weeks. Easy peasy!",
+    "score": -5,
+    "kind": "gamble"
+  },
+  {
+    "image": "https://res.cloudinary.com/dk85ozjx3/image/upload/v1598452129/images/rabbit_dvhmjh.jpg",
+    "title": "Turn into a Rabbit",
+    "description": "Adopt a healthy diet, which means a mostly plant-based diet that entails regularly eating healthy foods like vegetables, fruits, nuts, whole grains, healthy plant-or-nut fats, and omega-3 fatty acids. Avoid unhealthy foods like red and processed meats, sugar-sweetened beverages, trans fat, and excess sodium.",
+    "score": 10,
+    "kind": "challenge"
+  },
+  {
+    "image": "https://res.cloudinary.com/dk85ozjx3/image/upload/v1598452128/images/muscle-head_ltntsf.jpg",
+    "title": "Become a Muscle Head",
+    "description": "Physical activity has been shown to help maintain a healthy body weight, maintain healthy bones, muscles and joints, promote psychological well-being and reduce the risk of certain diseases, including some cancers. The goal is to stay within a BMI range that indicates a healthy body weight. Want to drop weight quickly, naturally and relatively easily? Intermittent fasting appears to work as a way of losing weight and keeping it off",
+    "score": 8,
+    "kind": "challenge"
+  },
+  {
+    "image": "https://res.cloudinary.com/dk85ozjx3/image/upload/v1598452133/images/gandhi_ciy8fx.jpg",
+    "title": "Be like Gandhi",
+    "description": "Fasting for short bursts is as ancient as humankind. Humans were not built to eat all the time, snacking and gorging all day long. Instead, try different windows for eating (such as ten hours on, 14 hours off) and find the one that works for you. We suggest that you start with the most popular window: Eat for 8 hours and fast for 16. So if you have dinner at 7 p.m. and finish by 8 p.m. (including wine) then fast until noon or slightly after the next day. Then you get the next eight hours to eat. While you can eat what you want, the body will be more likely to not store calories as fat if you stay away from the carbs. Other than that this diet works for plant-based and omnivores alike. Of course, the healthier you eat the better your body will feel, and the healthier you will be.",
+    "score": 5,
+    "kind": "challenge"
+  },
+  {
+    "image": "https://res.cloudinary.com/dk85ozjx3/image/upload/v1598452128/images/ashtray_gjo2pt.jpg",
+    "title": "Farewell the Ashtray girl",
+    "description": "Smoking is strongly linked to disease and early death .Overall, people who smoke may lose up to 10 years of life and be 3 times more likely to die prematurely than those who never pick up a cigarette. Keep in mind that it’s never too late to quit. One study reports that individuals who quit smoking by age 35 may prolong their lives by up to 8.5 years. Furthermore, quitting smoking in your 60s may add up to 3.7 years to your life. In fact, quitting in your 80s may still provide benefits.",
+    "score": 8,
+    "kind": "challenge"
+  },
+  {
+    "image": "https://res.cloudinary.com/dk85ozjx3/image/upload/v1598452129/images/sleepy_x5jmtk.jpg",
+    "title": "Turn into a Groundhog",
+    "description": "Sleep is crucial for regulating cell function and helping your body heal. A recent study reports that longevity is likely linked to regular sleeping patterns, such as going to bed and waking up around the same time each day. Sleep duration also seems to be a factor, with both too little and too much being harmful. For instance, sleeping less than 5–7 hours per night is linked to a 12% greater risk of early death, while sleeping more than 8–9 hours per night could also decrease your lifespan by up to 38%. Anyway, you won't miss a thing while you sleep. The next day the world will remain the same old shit.",
+    "score": 6,
+    "kind": "challenge"
+  }
 ]
