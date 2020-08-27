@@ -17,7 +17,7 @@ const Alert = (props) => {
     return (
         <div>
             <div className={className}>
-                <i className="fas fa-info-circle"></i> <p className='alert-msg'>{message}</p>
+                <i className="fas fa-info-circle"></i> <p className='alert-msg '>{message}</p>
             </div>
         </div>
     )

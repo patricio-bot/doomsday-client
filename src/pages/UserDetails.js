@@ -184,24 +184,21 @@ class UserDetails extends Component {
 
                                         </div>
                                         <div className="detail-box detail-box-info detail-data">
-                                            <h2>{firstName} {lastName}</h2>
-                                            <p>Gender: {gender}</p>
-                                            <p>Tasks Created: {tasksCreated}</p>
+                                            <h2 className='capitalize-text'>{firstName} {lastName}</h2>
+                                            <p className='capitalize-text'>Gender: {gender}</p>
+                                            {/* <p>Tasks Created: {tasksCreated}</p> */}
                                             <p>Age: {age}</p>
-                                            <p>Height: {height}</p>
+                                            <p>Weight: {weight} kgs</p>
+                                            <p>Height: {height} cms</p>
                                             <p>BMI: {health}</p>
-                                            {/*  <p>{yearsRemaining}</p>
-                                        <p>{days}:{hours}:{minutes}:{seconds} </p> */}
-                                            <p>About: {firstName} </p>
+
+                                            <p className='capitalize-text'>About {firstName}: </p>
                                             <p>{description}</p>
 
 
                                         </div>
                                     </div>
-                                    {/* <div className="detail-box detail-box-info detail-description">
-                                        <p>About: {firstName} </p>
-                                        <p>{description}</p>
-                                    </div> */}
+
                                     {this.state.user.completedProfile &&
                                         <Fragment>
                                             <div className="detail-box detail-box-info detail-days">
