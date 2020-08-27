@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import EditForm from '../components/EditForm';
 import TaskCard from '../components/TaskCard';
 import axiosRequestFunctions from '../lib/auth-service';
+import Modal from '../components/layout/Modal';
 
 
 class UserDetails extends Component {
@@ -41,14 +42,18 @@ class UserDetails extends Component {
             },
             timerId: null,
             allTasks: getTasks,
-            tasksToShow: []
+            tasksToShow: [],
+            showModal: false
 
 
         }
     }
 
     findUser = (isCurrentUser) => {
-        const id = this.props.match.params.id;
+        let id = this.props.match.params.id;
+        if (!id) {
+            id = this.props.user._id;
+        }
         userService.getOne(id)
             .then((user) => {
                 this.setState({ user, currentUser: isCurrentUser, tasksToShow: user.hasTasks })
@@ -155,6 +160,11 @@ class UserDetails extends Component {
             .catch(err => console.log(err))
     }
 
+    handleShowModal() {
+        this.setState({ showModal: true })
+    }
+
+
     render() {
         let { firstName, lastName, gender, isSmoker, isDrinker, age, country, image, tasksCreated, weight, height, health, hasSins, yearsRemaining, description } = this.state.user
         const { days, hours, minutes, seconds } = this.state
@@ -193,39 +203,45 @@ class UserDetails extends Component {
                                         <p>{description}</p>
                                     </div> */}
                                     {this.state.user.completedProfile &&
-                                        <div className="detail-box detail-box-info detail-days">
-                                            <h3>Life Expectancy</h3>
-                                            <p>{days} <span>d</span> : {hours} <span>h</span>  : {minutes} <span>m</span>  : {seconds} <span>s</span>  </p>
-                                        </div>
+                                        <Fragment>
+                                            <div className="detail-box detail-box-info detail-days">
+                                                <h3>Life Expectancy</h3>
+                                                <p>{days} <span>d</span> : {hours} <span>h</span>  : {minutes} <span>m</span>  : {seconds} <span>s</span>  </p>
+                                            </div>
+                                            <div className="detail-box detail-box-info detail-sins">
+                                                <h3>Probable Causes of Death</h3>
+                                                {this.state.user.hasSins.map((sin, index) => {
+                                                    return <div key={index}>
+
+                                                        <h4>{sin.disease}</h4>
+                                                        <p>{sin.description}</p>
+
+                                                    </div>
+                                                })}
+                                            </div>
+                                            {/* <Modal show={this.state.showModal} /> */}
+
+                                            <div className="detail-box detail-box-info detail-btn-mode">
+
+                                                <h2>Pick a mode to get tasks</h2>
+                                                {/* <i className="fas fa-info-circle" onClick={this.showModal}></i> */}
+                                                <button id='gamble' className="btn btn-after" onClick={this.getGambleTask}>
+                                                    Gamble Mode
+                                        </button>
+                                                <button id='challenge' className="btn btn-after" onClick={this.getChallengeTask}>
+                                                    Challenge Mode
+                                        </button>
+                                            </div>
+                                            <div className="detail-box detail-box-info ">
+                                                <ul className='task-box-card'>
+                                                    {this.state.tasksToShow.map((item, index) => <TaskCard key={index} {...item} />
+                                                    )}
+                                                </ul>
+                                            </div>
+                                        </Fragment>
 
                                     }
-                                    <div className="detail-box detail-box-info detail-sins">
-                                        <h3>Probable Causes of Death</h3>
-                                        {this.state.user.hasSins.map((sin, index) => {
-                                            return <div key={index}>
 
-                                                <h4>{sin.disease}</h4>
-                                                <p>{sin.description}</p>
-
-                                            </div>
-                                        })}
-                                    </div>
-
-                                    <div className="detail-box detail-box-info detail-btn-mode">
-                                        <h2>Pick a mode to get tasks</h2>
-                                        <button id='gamble' className="btn btn-after" onClick={this.getGambleTask}>
-                                            Gamble Mode
-                                        </button>
-                                        <button id='challenge' className="btn btn-after" onClick={this.getChallengeTask}>
-                                            Challenge Mode
-                                        </button>
-                                    </div>
-                                    <div className="detail-box detail-box-info ">
-                                        <ul className='task-box-card'>
-                                            {this.state.tasksToShow.map((item, index) => <TaskCard key={index} {...item} />
-                                            )}
-                                        </ul>
-                                    </div>
 
 
 
