@@ -160,8 +160,11 @@ class UserDetails extends Component {
             .catch(err => console.log(err))
     }
 
-    handleShowModal() {
+    handleShowModal = () => {
         this.setState({ showModal: true })
+    }
+    handleCloseModal = () => {
+        this.setState({ showModal: false })
     }
 
 
@@ -216,12 +219,13 @@ class UserDetails extends Component {
                                                     </div>
                                                 })}
                                             </div>
-                                            {/* <Modal show={this.state.showModal} /> */}
+                                            <Modal show={this.state.showModal} modalClosed={this.handleCloseModal} />
 
                                             <div className="detail-box detail-box-info detail-btn-mode">
 
-                                                <h2>Pick a mode to get tasks</h2>
-                                                {/* <i className="fas fa-info-circle" onClick={this.showModal}></i> */}
+                                                <h2>Pick a mode to get tasks <i className="fas fa-info-circle cursor-pointer" onClick={this.handleShowModal}></i>  </h2>
+
+
                                                 <button id='gamble' className="btn btn-after" onClick={this.getGambleTask}>
                                                     Gamble Mode
                                         </button>
