@@ -206,3 +206,11 @@ Sin model
 | `GET`      | `/sins/:id`        | Display a specific disease and its causes and symptoms | {id}                                                  |
 | `POST`     | `/user/data`       | Update all the user information and stores it in DB    |                                                       |
 | `GET`      | `/users/necrology` | Show all dead users                                    | {status}                                              |
+
+<br/><br/>
+
+## Deploy
+
+---
+
+https://doomsday-app.herokuapp.com/
