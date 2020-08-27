@@ -195,11 +195,12 @@ ol {
 
 .para-form {
   color: var(--pink-text);
+  margin-right: 1rem;
 }
 
 .para-control {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 2rem;
 }
@@ -365,6 +366,7 @@ ol {
 .card-box-content a {
   color: var(--main-red);
   border-bottom: 1px solid var(--red-btn);
+  text-transform: capitalize;
 }
 .detail-box {
   color: var(--main-red);
@@ -378,6 +380,8 @@ ol {
 .detail-box-info {
   text-align: center;
   margin: 2rem 0;
+}
+.capitalize-text {
   text-transform: capitalize;
 }
 .detail-box-info h2 {
@@ -583,6 +587,7 @@ ol {
   }
   .form-grid {
     grid-area: 2/1/4/3;
+    margin: 2rem 0;
   }
   .detail-box-info {
     text-align: left;
@@ -615,11 +620,14 @@ ol {
     width: 500px;
     left: calc(50% - 250px);
   }
+  .edit-user {
+    grid-area: 1/1/2/3;
+  }
 }
 
 @media screen and (min-width: 900px) {
   .users-box-card {
-    margin: 8rem 0;
+    margin: 8rem auto;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
   }
@@ -644,5 +652,8 @@ ol {
   }
   .detail-img {
     width: 60%;
+  }
+  .edit-user {
+    grid-area: 1/1/2/4;
   }
 }
