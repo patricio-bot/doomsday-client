@@ -219,12 +219,12 @@ class UserDetails extends Component {
                                                     </div>
                                                 })}
                                             </div>
-                                            <Modal show={this.state.showModal} />
+                                            {/* <Modal show={this.state.showModal} /> */}
 
                                             <div className="detail-box detail-box-info detail-btn-mode">
 
                                                 <h2>Pick a mode to get tasks</h2>
-                                                <i className="fas fa-info-circle" onClick={this.showModal}></i>
+                                                {/* <i className="fas fa-info-circle" onClick={this.showModal}></i> */}
                                                 <button id='gamble' className="btn btn-after" onClick={this.getGambleTask}>
                                                     Gamble Mode
                                         </button>
