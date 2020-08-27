@@ -388,6 +388,7 @@ ol {
   padding-bottom: 1rem;
   margin-bottom: 1rem;
   border-bottom: 2px solid var(--red-btn);
+  font-size: 2rem;
 }
 .detail-box-info p {
   font-size: 1.8rem;
@@ -550,6 +551,18 @@ ol {
   margin-bottom: 1rem;
   padding-bottom: 1rem;
 }
+.backdrop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.cursor-pointer {
+  cursor: pointer;
+}
 /****************************** media queries *****************/
 @media screen and (min-width: 600px) {
   .home-bg,
@@ -591,6 +604,9 @@ ol {
   }
   .detail-box-info {
     text-align: left;
+  }
+  .detail-box-info h2 {
+    font-size: 2.5rem;
   }
   .label-container {
     font-size: 2.2rem;
