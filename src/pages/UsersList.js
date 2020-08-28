@@ -43,8 +43,8 @@ class UsersList extends Component {
 
         const filteredUser = this.state.listOfUsers.filter(user => {
             let userFirstName = user.firstName.toLowerCase();
-            let userlLastName = user.lastName.toLowerCase();
-            if (userFirstName.includes(lowerSearchUser || userlLastName.includes(lowerSearchUser))) {
+            let userLastName = user.lastName.toLowerCase();
+            if (userFirstName.includes(lowerSearchUser || userLastName.includes(lowerSearchUser))) {
                 return true;
             } else {
                 return false;
