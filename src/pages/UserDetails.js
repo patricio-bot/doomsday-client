@@ -77,14 +77,22 @@ class UserDetails extends Component {
 
             let now = new Date().getTime();
 
-            let f = new Date("Aug 25, 2065 15:37:25").getTime();
+            //let f = new Date("Aug 25, 2040 15:37:25").getTime();
+
             let future = Math.floor(this.state.user.yearsRemaining * 31536000000);
-            let countDownDate = f - now;
+            //let finalDate = future + now;
+            //let newFuture = new Date(finalDate)
+            //let finalFuture = newFuture.toUTCString().split('').slice(4, 25).join('')
+            //let finalFinalFuture = new Date(finalFuture).getTime()
+
+
+            let countDownDate = future - now;
+            console.log(countDownDate);
 
             let days = Math.abs(Math.floor(countDownDate / (1000 * 60 * 60 * 24)));
             let hours = Math.abs(Math.floor((countDownDate % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
             let minutes = Math.abs(Math.floor((countDownDate % (1000 * 60 * 60)) / (1000 * 60)));
-            let seconds = Math.abs(Math.floor((countDownDate % (1000 * 60)) / 1000));
+            let seconds = Math.abs(Math.floor((countDownDate / 1000) % 60));
             this.setState({ days, hours, minutes, seconds })
 
         }, 1000)
